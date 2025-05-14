@@ -1,0 +1,1 @@
+Scaffold-DbContext 'Server=DESKTOP-NPOP8JC\SQLEXPRESS; Database=Todo; Trusted_Connection=True; MultipleActiveResultSets=true;TrustServerCertificate=True;' Microsoft.EntityFrameworkCore.SqlServer -ContextDir Data -OutputDir Models
