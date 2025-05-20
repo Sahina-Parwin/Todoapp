@@ -31,24 +31,64 @@ namespace api.Controllers
             return _todoService.GetAll();
         }
 
-        [HttpPost("create")]
-        public void create()
+        [HttpGet("get/{id}")]
+        public ActionResult<Todoitem> GetById(int id)
         {
+            return Ok(_todoService.GetById(id));
+
+        }
+
+        [HttpPost("create")]
+        public ActionResult<Todoitem> create([FromBody] Todoitem item)
+        {
+            try
+            {
+                return Ok(_todoService.Create(item));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);  
+            }
 
         }
         [HttpPut("update/{id}")]
-        public void update(int id)
+        public ActionResult<Todoitem> update([FromBody] Todoitem item, int id)
         {
+            try
+            {
+                return Ok(_todoService.Update(item));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
 
         }
         [HttpPost("delete/{id}")]
-        public void delete(int id)
+        public ActionResult<Todoitem> delete(int id)
         {
+            try
+            {
+                return Ok(_todoService.Delete(id));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
 
         }
         [HttpPut("complete/{id}")]
-        public void complete(int id)
+        public ActionResult<Todoitem> complete([FromBody] Todoitem item, int id)
         {
+
+            try
+            {
+                return Ok(_todoService.Complete(item));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
 
         }
 

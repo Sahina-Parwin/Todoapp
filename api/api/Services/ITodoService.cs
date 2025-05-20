@@ -14,5 +14,7 @@ namespace api.Services
         public Todoitem Update(Todoitem item);
         public Todoitem Delete(int id);
 
+        public Todoitem Complete(Todoitem item);
+
     }
 }

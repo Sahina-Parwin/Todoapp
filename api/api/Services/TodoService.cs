@@ -12,6 +12,12 @@ namespace api.Services
             this.todoRepository = todoRepository;
         }
 
+        public Todoitem Complete(Todoitem item)
+        {
+            item.Status = true;
+            return todoRepository.Update(item);
+        }
+
         public Todoitem Create(Todoitem item)
         {
           return todoRepository.Create(item);
