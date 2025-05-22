@@ -1,2 +1,2 @@
-# full-stack-template
-A basic starter template for a full stack web application with dot net core web api and react js
+# TODO APP (WEB)
+A basic Web based Todo App with dot net core web api and react js
