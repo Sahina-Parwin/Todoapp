@@ -14,7 +14,7 @@ namespace api.Services
 
         public Todoitem Complete(Todoitem item)
         {
-            item.Status = true;
+            item.Status = item.Status == true?false : true;
             return todoRepository.Update(item);
         }
 
